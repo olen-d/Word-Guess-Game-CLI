@@ -4,16 +4,16 @@ function Letter(c) {
     this.char = c;
     this.guessed = false;
 
-    this.output = function () {
+    this.toString = function () {
         return (this.guessed ? this.char + " " : "_ ");
     };
 
     this.checkChar = function (guess) {
         if(guess === this.char) {
             this.guessed = true;
-            console.log(this.output());
+            console.log(this.toString());
         } else {
-            console.log(this.output());
+            console.log(this.toString());
             tGuesses--;
         }
     }

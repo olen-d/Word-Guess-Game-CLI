@@ -6,7 +6,7 @@ function Letter(c) {
     this.char = c;
     this.guessed = false;
 
-    this.toString = function (char) {
+    this.displayLetter = function (char) {
         return (this.guessed ? this.char + " " : "_ ");
     };
 

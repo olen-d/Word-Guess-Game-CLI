@@ -18,17 +18,13 @@ function Word(w) {
             letterObjs.push(new letter(char.value)); 
             char = iterator.next();
         }
-        //console.log(letters.indexOf("b"));
-        //console.log(letterObjs[letters.indexOf("b")]);
-       // console.log(letterObjs);
     };
 
     // A function that returns a string representing the word. This should call the function on each letter object 
     // (the first function defined in `Letter.js`) that displays the character or an underscore and concatenate those together.
     this.blanks = function() {
         letters.forEach((e) => {
-            lettersStr.push(letterObjs[letters.indexOf(e)].toString(e));
-            //console.log("--", lettersStr);
+            lettersStr.push(letterObjs[letters.indexOf(e)].displayLetter(e));
         });
         let blanksStr = lettersStr.join(" ");
         console.log(blanksStr);
@@ -50,10 +46,10 @@ function Word(w) {
 
 
 
-const w1 = new Word ("Cheeseburger");
-console.log(w1.word);
 
-w1.createLetters(w1.word);
-w1.blanks();
-w1.guessResult("h");
-w1.blanks();
+// console.log(w1.word);
+
+// w1.createLetters(w1.word);
+// w1.blanks();
+// w1.guessResult("h");
+// w1.blanks();

@@ -1,5 +1,3 @@
-let tGuesses = 99;
-
 module.exports = Letter;
 
 function Letter(c) {
@@ -13,13 +11,6 @@ function Letter(c) {
     this.checkChar = function (guess) {
         if(guess === this.char) {
             this.guessed = true;
-        } else {
-            tGuesses--;
-        }
-    }
+        } 
+    };
 }
-
-
-
-const l1 = new Letter ("q");
-l1.checkChar("q");

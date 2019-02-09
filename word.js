@@ -50,10 +50,18 @@ function Word(w) {
         if (matches.findIndex(k => k=== true) > -1) {
             console.log("\n\x1b[32mCorrect!\x1b[0m\n");
             if(matches.findIndex(l => l === false) === -1) {
+                this.guessed = true;
                 console.log("\n\x1b[32mGood Job! You guessed the word.\x1b[0m\n");
             }
         } else {
             console.log("\n\x1b[31mWrong Answer!\x1b[0m\n");
         }
+    }
+
+    this.reset = function() {
+        letters.length = 0;
+        letterObjs.length = 0;
+        lettersStr.length = 0;
+        matches.length = 0;
     }
 }

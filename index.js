@@ -66,14 +66,27 @@ const wordGame = {
         if (res) {  // TOODO validate this
           wordToGuess.guessResult(res.guess,tGuesses);
           wordToGuess.blanks();
+          wordGame.checkGuessed(); 
         }
         else {
           //console.log("\nThat's okay " + inquirerResponse.username + ", come again when you are more sure.\n");
         }
       });
+  },
+
+  checkGuessed() {
+    console.log("chickenPotPie", wordToGuess.guessed);
+    if (wordToGuess.guessed) {
+      wordToGuess.reset();
+      wordGame.pickWord();
+      wordGame.getGuess();
+    } else {
+      wordGame.getGuess();
+    }
   }
 }
 
 wordGame.pickWord();
 wordGame.getGuess();
+//wordGame.checkGuessed();
   // Prompts the user for each guess and keeps track of the user's remaining guesses
